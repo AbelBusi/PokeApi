@@ -4,6 +4,7 @@
  */
 package vista;
 
+import controlador.cPokeApi;
 import java.awt.Dimension;
 
 /**
@@ -99,19 +100,25 @@ public class formPokemon extends javax.swing.JFrame {
         txtAlturaPok.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         panelMenu.add(txtAlturaPok, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 70, 30));
 
-        panelImagen.setBackground(new java.awt.Color(204, 204, 255));
+        panelImagen.setBackground(new java.awt.Color(187, 187, 187));
 
-        labelImagenPok.setText("jLabel2");
+        labelImagenPok.setForeground(new java.awt.Color(60, 63, 65));
 
         javax.swing.GroupLayout panelImagenLayout = new javax.swing.GroupLayout(panelImagen);
         panelImagen.setLayout(panelImagenLayout);
         panelImagenLayout.setHorizontalGroup(
             panelImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(labelImagenPok, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelImagenLayout.createSequentialGroup()
+                .addContainerGap(12, Short.MAX_VALUE)
+                .addComponent(labelImagenPok, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         panelImagenLayout.setVerticalGroup(
             panelImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(labelImagenPok, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+            .addGroup(panelImagenLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(labelImagenPok, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         panelMenu.add(panelImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 190, 220));
@@ -178,6 +185,11 @@ public class formPokemon extends javax.swing.JFrame {
 
     private void buttonBuscarPokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarPokActionPerformed
         // TODO add your handling code here:
+        cPokeApi objetoPokemon = new cPokeApi();
+        objetoPokemon.mostrarPokemon(tablePokemon, txtBuscarPok, txtNombrePok, txtPesoPok, txtAlturaPok, txtExpPok, labelImagenPok);
+        
+        
+        
     }//GEN-LAST:event_buttonBuscarPokActionPerformed
 
     /**
